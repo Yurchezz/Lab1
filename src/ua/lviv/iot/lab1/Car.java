@@ -1,6 +1,6 @@
-package labs;
+package ua.lviv.iot.lab1;
 
-class Car {
+class Car{
     int enginePower;
     String mark;
     int maxSpeed;
@@ -14,28 +14,24 @@ class Car {
     protected int protectedField2;
 
 
-
     public void printStaticField1(){
-        System.out.println("Static Field: "+Car.staticField);
+        System.out.println("Static Field: " + Car.staticField);
     }
 
-    public void printField() {
-        System.out.println("Static Field: "+Car.staticField);
-    }
-    public Car() {
-
-        this(0,"undefined",0,0,0,0,0);
+    public void printField(){
+        System.out.println("Static Field: " + Car.staticField);
     }
 
-    public Car(int enginePower, String mark, int maxSpeed, int engineVolume, int kilometrage) {
-        this.enginePower = enginePower;
-        this.mark = mark;
-        this.maxSpeed = maxSpeed;
-        this.engineVolume = engineVolume;
-        this.kilometrage = kilometrage;
+    public Car(){
+
+        this(0, "undefined", 0, 0, 0, 0, 0);
     }
 
-    public Car(int enginePower, String mark, int maxSpeed, int engineVolume, int kilometrage, int protectedField1, int protectedField2) {
+    public Car(int enginePower, String mark, int maxSpeed, int engineVolume, int kilometrage){
+        this(enginePower, mark, maxSpeed, engineVolume, kilometrage, 0, 0);
+    }
+
+    public Car(int enginePower, String mark, int maxSpeed, int engineVolume, int kilometrage, int protectedField1, int protectedField2){
         this.enginePower = enginePower;
         this.mark = mark;
         this.maxSpeed = maxSpeed;
@@ -46,7 +42,7 @@ class Car {
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return "\nCar{" +
                 "enginePower=" + enginePower +
                 ", mark='" + mark + '\'' +
